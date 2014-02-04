@@ -6,7 +6,7 @@ import reactivemongo.api._
 object Conexion {
   
   //Driver para la conexion
-  val driver = new MongoDriver
+  //val driver = new MongoDriver
 
   //Conexion con mongoDB
   val conexion = driver.connection(List("localhost"))
