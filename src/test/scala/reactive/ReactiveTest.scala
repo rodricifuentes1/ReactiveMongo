@@ -10,26 +10,20 @@ import objetos.Profesor
 import org.junit.Before
 import org.scalatest.FunSuite
 
-class ReactiveTest extends FunSuite{
+class ReactiveTest extends FunSuite {
 
   val timeout = 20 seconds
 
-  @Before def vaciar
-  {
+  @Before def vaciar {
     Await.ready(DataBase.vaciarTodo, timeout)
   }
-  
-//  @Test def crear{
-//    val est = Estudiante("1", "Estudiante", "Prueba", 20)
-//    assert(Await.result(DataBase.insertarEstudiante(est), timeout).ok == true)
-//   
-//    val prof = Profesor("1", "Profesor", "Isis", List("1"))
-//    assert(Await.result(DataBase.insertarProfesor(prof), timeout).ok == true)
-//  }
-  
-//  @Test def eliminar {
-//    assert(Await.result(DataBase.eliminarEstudiante("1"), timeout).err == false)
-//    assert(Await.result(DataBase.eliminarProfesor("1"), timeout).err == true)
-//  }
+
+  @Test def crear {
+    val est = Estudiante("1", "Estudiante", "Prueba", 20)
+    assert(Await.result(DataBase.insertarEstudiante(est), timeout).ok == true)
+
+    val prof = Profesor("1", "Profesor", "Isis", List("1"))
+    assert(Await.result(DataBase.insertarProfesor(prof), timeout).ok == true)
+  }
 
 }
