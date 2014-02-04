@@ -19,5 +19,6 @@ object Conexion {
 
   //Colección profesores que se encuentra en la base de datos AMDB
   val col_profesores = baseDedatos("profesores")
+  
 
 }
